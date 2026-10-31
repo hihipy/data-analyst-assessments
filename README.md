@@ -90,14 +90,22 @@ All data is synthetic. The people, stores, schools, and companies are invented, 
 ```
 data-analyst-assessments/
 ├── 01_spreadsheet/
-│   ├── 01_easy/online_store_order_review/
-│   ├── 02_medium/sales_commission_review/
-│   └── 03_hard/inventory_reorder_planning/
+│   ├── 01_easy/
+│   │   └── online_store_order_review/
+│   ├── 02_medium/
+│   │   └── sales_commission_review/
+│   └── 03_hard/
+│       └── inventory_reorder_planning/
 └── 02_code/
-    ├── 01_easy/coffee_shop_sales_review/
-    ├── 02_medium/regional_admissions_funnel_review/
-    └── 03_hard/workforce_attrition_and_pay_review/
+    ├── 01_easy/
+    │   └── coffee_shop_sales_review/
+    ├── 02_medium/
+    │   └── regional_admissions_funnel_review/
+    └── 03_hard/
+        └── workforce_attrition_and_pay_review/
 ```
+
+Assessments are grouped by track, then by level, with each assessment in its own folder, so a level can hold more than one.
 
 Each spreadsheet-track folder holds the HTML instructions, the workbook, and the answer key. Each code-track folder holds the HTML instructions, a `data` folder, and an `answer_key` folder.
 
