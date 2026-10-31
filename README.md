@@ -27,11 +27,17 @@ Most tests also either ban AI tools or say nothing about them. Neither choice re
 | Track | Level | Assessment | Setting | Time Limit |
 | --- | --- | --- | --- | --- |
 | Spreadsheet | Easy | [Online Store Order Review](01_spreadsheet/01_easy/online_store_order_review/) | E-commerce | 45 minutes |
+| Spreadsheet | Easy | [Clinic Appointment Review](01_spreadsheet/01_easy/clinic_appointment_review/) | Healthcare | 45 minutes |
 | Spreadsheet | Medium | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/) | Software sales | 90 minutes |
+| Spreadsheet | Medium | [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/) | Healthcare | 90 minutes |
 | Spreadsheet | Hard | [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/) | Distribution | 3 hours |
+| Spreadsheet | Hard | [Emergency Department Throughput and Staffing](01_spreadsheet/03_hard/emergency_department_review/) | Healthcare | 3 hours |
 | Code | Easy | [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/) | Retail | 60 minutes |
+| Code | Easy | [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/) | Healthcare | 60 minutes |
 | Code | Medium | [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/) | Education | 2 hours |
+| Code | Medium | [Specialist Referral Follow-Through](02_code/02_medium/specialist_referral_review/) | Healthcare | 2 hours |
 | Code | Hard | [Workforce Attrition and Pay Review](02_code/03_hard/workforce_attrition_and_pay_review/) | Human resources | 4 hours |
+| Code | Hard | [Inpatient Deterioration Early Warning](02_code/03_hard/deterioration_early_warning/) | Healthcare | 4 hours |
 
 Each name links to its folder.
 
@@ -77,7 +83,7 @@ Each assessment has an answer key with:
 - Guidance on judging AI use, based on transparency and checking rather than whether AI was used.
 - Follow-up questions for an interview.
 
-The hard code-track assessment also includes [a Python script](02_code/03_hard/workforce_attrition_and_pay_review/answer_key/reference_solution.py) that reproduces every figure in its key from the data files.
+The hard code-track assessments also include a Python script, `reference_solution.py`, that reproduces every figure in the key from the data files.
 
 ---
 
@@ -96,34 +102,62 @@ Assessments are grouped by track, then by level, with each assessment in its own
 data-analyst-assessments/
 ├── 01_spreadsheet/
 │   ├── 01_easy/
+│   │   ├── clinic_appointment_review/
+│   │   │   ├── clinic_appointment_answer_key.md         # Answer key
+│   │   │   ├── clinic_appointment_review.html           # Instructions
+│   │   │   └── clinic_appointments.xlsx                 # Data
 │   │   └── online_store_order_review/
 │   │       ├── online_store_answer_key.md               # Answer key
 │   │       ├── online_store_order_review.html           # Instructions
 │   │       └── online_store_orders.xlsx                 # Data
 │   ├── 02_medium/
+│   │   ├── hospital_stay_review/
+│   │   │   ├── hospital_stay_answer_key.md              # Answer key
+│   │   │   ├── hospital_stay_review.html                # Instructions
+│   │   │   └── hospital_stays_data.xlsx                 # Data
 │   │   └── sales_commission_review/
 │   │       ├── sales_commission_answer_key.md           # Answer key
 │   │       ├── sales_commission_data.xlsx               # Data
 │   │       └── sales_commission_review.html             # Instructions
 │   └── 03_hard/
+│       ├── emergency_department_review/
+│       │   ├── ed_throughput_data.xlsx                  # Data
+│       │   ├── emergency_department_answer_key.md       # Answer key
+│       │   └── emergency_department_review.html         # Instructions
 │       └── inventory_reorder_planning/
 │           ├── inventory_answer_key.md                  # Answer key
 │           ├── inventory_planning_data.xlsx             # Data
 │           └── inventory_reorder_planning.html          # Instructions
 ├── 02_code/
 │   ├── 01_easy/
-│   │   └── coffee_shop_sales_review/
+│   │   ├── coffee_shop_sales_review/
+│   │   │   ├── answer_key/
+│   │   │   │   └── coffee_answer_key.md                 # Answer key
+│   │   │   ├── coffee_shop_sales_review.html            # Instructions
+│   │   │   └── data/                                    # Data (.csv.gz)
+│   │   └── pharmacy_claims_review/
 │   │       ├── answer_key/
-│   │       │   └── coffee_answer_key.md                 # Answer key
-│   │       ├── coffee_shop_sales_review.html            # Instructions
-│   │       └── data/                                    # Data (.csv.gz)
-│   ├── 02_medium/
-│   │   └── regional_admissions_funnel_review/
-│   │       ├── answer_key/
-│   │       │   └── admissions_answer_key.md             # Answer key
+│   │       │   └── pharmacy_claims_answer_key.md        # Answer key
 │   │       ├── data/                                    # Data (.csv.gz)
-│   │       └── regional_admissions_funnel_review.html   # Instructions
+│   │       └── pharmacy_claims_review.html              # Instructions
+│   ├── 02_medium/
+│   │   ├── regional_admissions_funnel_review/
+│   │   │   ├── answer_key/
+│   │   │   │   └── admissions_answer_key.md             # Answer key
+│   │   │   ├── data/                                    # Data (.csv.gz)
+│   │   │   └── regional_admissions_funnel_review.html   # Instructions
+│   │   └── specialist_referral_review/
+│   │       ├── answer_key/
+│   │       │   └── specialist_referral_answer_key.md    # Answer key
+│   │       ├── data/                                    # Data (.csv.gz)
+│   │       └── specialist_referral_review.html          # Instructions
 │   └── 03_hard/
+│       ├── deterioration_early_warning/
+│       │   ├── answer_key/
+│       │   │   ├── deterioration_answer_key.md          # Answer key
+│       │   │   └── reference_solution.py                # Reproduces the answer key
+│       │   ├── data/                                    # Data (.csv.gz)
+│       │   └── deterioration_early_warning.html         # Instructions
 │       └── workforce_attrition_and_pay_review/
 │           ├── answer_key/
 │           │   ├── reference_solution.py                # Reproduces the answer key
