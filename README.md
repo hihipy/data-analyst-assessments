@@ -55,14 +55,6 @@ Each name links to its folder.
 
 **If you're hiring:**
 
-```mermaid
-flowchart LR
-    A["Pick an assessment"] --> B["Send the HTML page<br/>and data files"]
-    B --> C["Candidate returns work<br/>and an AI use log"]
-    C --> D["Score with the<br/>answer key rubric"]
-    D --> E["Interview with the<br/>follow-up questions"]
-```
-
 1. Pick an assessment from [the table above](#the-assessments).
 2. Send the candidate the HTML instructions and the data files from that folder.
 3. Keep the answer key to yourself.
