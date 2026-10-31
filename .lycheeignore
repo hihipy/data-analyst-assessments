@@ -1,0 +1,5 @@
+# Patterns of URLs lychee should skip during link checks.
+# One regex per line. Lines starting with # are ignored.
+
+# Placeholder links in code-block examples.
+example\.com

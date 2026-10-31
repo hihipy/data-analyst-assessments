@@ -1,0 +1,168 @@
+# >>> managed gitignore: begin (gitignore-forge.py) >>>
+# Generated 2026-10-31 for data-analyst-assessments.
+# Detected stacks: python.
+# Edits inside this block are overwritten. Put repo-specific rules below it.
+
+# --- macOS -------------------------------------------------------------------
+.DS_Store
+._*
+.AppleDouble
+.AppleDB
+.AppleDesktop
+.LSOverride
+# The next line is "Icon" followed by two carriage returns. Git strips one, and
+# the macOS custom-icon file carries the other. A plain "Icon" line would hide
+# every path with that name. Verify with: grep -c $'Icon\r\r' .gitignore
+Icon
+.Spotlight-V100
+.DocumentRevisions-V100
+.TemporaryItems
+.Trashes
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.apdisk
+Network Trash Folder
+Temporary Items
+# --- Windows and Linux artifacts ---------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.stackdump
+*.lnk
+.directory
+.Trash-*
+.nfs*
+# --- cloud sync --------------------------------------------------------------
+*.icloud
+.dropbox
+.dropbox.attr
+.dropbox.cache
+# --- editors and IDEs --------------------------------------------------------
+# .vscode/* rather than .vscode/, so the negations below stay reachable. A
+# negation cannot re-include a file whose parent directory is excluded.
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+*.code-workspace
+.idea/
+*.iml
+*.ipr
+*.iws
+.fleet/
+.zed/
+.history/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+*~
+Session.vim
+.netrwhist
+.ionide/
+# --- agent and assistant local state -----------------------------------------
+.claude/settings.local.json
+# --- secrets and credentials -------------------------------------------------
+# Deliberately broad. A leaked key costs more than a hidden fixture. Where a
+# repo needs a fixture certificate, add a scoped negation below the block, for
+# example !tests/fixtures/*.pem, which works because tests/fixtures/ is not
+# itself ignored.
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.ppk
+# "*.key" is deliberately absent: Keynote decks are directories named *.key.
+secrets.json
+credentials.json
+service-account*.json
+.secrets/
+# --- local databases and dumps -----------------------------------------------
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+*.dump
+# --- build noise and scratch -------------------------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*.pid
+.tmp/
+.scratch/
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+# *.so is unanchored on purpose: compiled extensions land beside their sources.
+*.so
+.Python
+/build/
+/dist/
+/develop-eggs/
+/eggs/
+.eggs/
+/sdist/
+/wheels/
+share/python-wheels/
+*.egg-info/
+*.egg
+.installed.cfg
+/MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+nosetests.xml
+*.cover
+/htmlcov/
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+.pdm-python
+.pdm-build/
+__pypackages__/
+venv/
+.venv/
+/env/
+/ENV/
+.ipynb_checkpoints/
+/profile_default/
+# <<< managed gitignore: end <<<
+
+# --- local rules: edit freely, never overwritten -----------------------------
+
+# Uncompressed data. The code track ships gzipped CSVs only, and a plain
+# job_history.csv is over GitHub's 100 MB file limit.
+02_code/**/data/*.csv
+
+# Output from running reference_solution.py.
+answers.json
