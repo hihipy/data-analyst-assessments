@@ -26,23 +26,25 @@ Most tests also either ban AI tools or say nothing about them. Neither choice re
 
 | Track | Level | Assessment | Setting | Time Limit |
 | --- | --- | --- | --- | --- |
-| Spreadsheet | Easy | Online Store Order Review | E-commerce | 45 minutes |
-| Spreadsheet | Medium | Sales Commission Review | Software sales | 90 minutes |
-| Spreadsheet | Hard | Inventory Reorder Planning | Distribution | 3 hours |
-| Code | Easy | Coffee Shop Sales Review | Retail | 60 minutes |
-| Code | Medium | Regional Admissions Funnel Review | Education | 2 hours |
-| Code | Hard | Workforce Attrition and Pay Review | Human resources | 4 hours |
+| Spreadsheet | Easy | [Online Store Order Review](01_spreadsheet/01_easy/online_store_order_review/) | E-commerce | 45 minutes |
+| Spreadsheet | Medium | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/) | Software sales | 90 minutes |
+| Spreadsheet | Hard | [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/) | Distribution | 3 hours |
+| Code | Easy | [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/) | Retail | 60 minutes |
+| Code | Medium | [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/) | Education | 2 hours |
+| Code | Hard | [Workforce Attrition and Pay Review](02_code/03_hard/workforce_attrition_and_pay_review/) | Human resources | 4 hours |
 
-**Spreadsheet track:** every part can be done in Excel, Google Sheets, LibreOffice Calc, Numbers, or similar. The data comes as a single workbook (`.xlsx`). Candidates who prefer code can use it.
+Each name links to its folder.
 
-**Code track:** the data is too large for a spreadsheet, so candidates work in a programming language of their choice, such as Julia, Python, R, or SQL. Notebooks like Jupyter, marimo, Pluto, and Quarto are welcome. The data files are compressed CSVs (`.csv.gz`), which most tools read directly.
+**Spreadsheet track:** every part can be done in [Excel](https://www.microsoft.com/microsoft-365/excel), [Google Sheets](https://workspace.google.com/products/sheets/), [LibreOffice Calc](https://www.libreoffice.org/discover/calc/), [Numbers](https://www.apple.com/numbers/), or similar. The data comes as a single workbook (`.xlsx`). Candidates who prefer code can use it.
+
+**Code track:** the data is too large for a spreadsheet, so candidates work in a programming language of their choice, such as [Julia](https://julialang.org), [Python](https://www.python.org), [R](https://www.r-project.org), or SQL. Notebooks like [Jupyter](https://jupyter.org), [marimo](https://marimo.io), [Pluto](https://plutojl.org), and [Quarto](https://quarto.org) are welcome. The data files are CSVs compressed with [gzip](https://www.gnu.org/software/gzip/) (`.csv.gz`), which most tools read directly.
 
 ---
 
 ## How They Work
 
-- **Instructions as a web page:** each assessment is a single HTML file that opens in any browser, works offline, and can be sent as an email attachment. It adapts to phones, dark mode, and printing.
-- **Column descriptions, not answers:** the instructions describe each data file and show how the files connect in a diagram, but never show the values. Candidates have to open and explore the data themselves.
+- **Instructions as a web page:** each assessment is a single HTML file that opens in any browser, works offline, and can be sent as an email attachment. It adapts to phones, dark mode, and printing, and typesets its formulas with [KaTeX](https://katex.org).
+- **Column descriptions, not answers:** the instructions describe each data file and show how the files connect in a [Mermaid](https://mermaid.js.org) diagram, but never show the values. Candidates have to open and explore the data themselves.
 - **Problems hidden in the data:** duplicates, mixed date formats, missing days, mismatched units, and records that contradict each other. Spotting them is part of the test, and the harder levels hide more of them.
 - **Difficulty from judgment:** the easy assessments test careful calculation. The hard ones test whether someone can tell what was true on a given date, avoid using information from the future, and explain their choices.
 - **AI allowed, with a log:** candidates may use AI assistants for any part of the work. If they do, they submit a short log of the tools used, example prompts, and how they checked the results.
@@ -53,7 +55,15 @@ Most tests also either ban AI tools or say nothing about them. Neither choice re
 
 **If you're hiring:**
 
-1. Pick an assessment from the table above.
+```mermaid
+flowchart LR
+    A["Pick an assessment"] --> B["Send the HTML page<br/>and data files"]
+    B --> C["Candidate returns work<br/>and an AI use log"]
+    C --> D["Score with the<br/>answer key rubric"]
+    D --> E["Interview with the<br/>follow-up questions"]
+```
+
+1. Pick an assessment from [the table above](#the-assessments).
 2. Send the candidate the HTML instructions and the data files from that folder.
 3. Keep the answer key to yourself.
 4. Score the submission with the rubric in the answer key, then use its follow-up questions in the interview.
@@ -75,7 +85,7 @@ Each assessment has an answer key with:
 - Guidance on judging AI use, based on transparency and checking rather than whether AI was used.
 - Follow-up questions for an interview.
 
-The hard code-track assessment also includes a Python script that reproduces every figure in its key from the data files.
+The hard code-track assessment also includes [a Python script](02_code/03_hard/workforce_attrition_and_pay_review/answer_key/reference_solution.py) that reproduces every figure in its key from the data files.
 
 ---
 
@@ -87,33 +97,37 @@ All data is synthetic. The people, stores, schools, and companies are invented, 
 
 ## Project Structure
 
-```
-data-analyst-assessments/
-├── 01_spreadsheet/
-│   ├── 01_easy/
-│   │   └── online_store_order_review/
-│   ├── 02_medium/
-│   │   └── sales_commission_review/
-│   └── 03_hard/
-│       └── inventory_reorder_planning/
-└── 02_code/
-    ├── 01_easy/
-    │   └── coffee_shop_sales_review/
-    ├── 02_medium/
-    │   └── regional_admissions_funnel_review/
-    └── 03_hard/
-        └── workforce_attrition_and_pay_review/
-```
-
 Assessments are grouped by track, then by level, with each assessment in its own folder, so a level can hold more than one.
 
-Each spreadsheet-track folder holds the HTML instructions, the workbook, and the answer key. Each code-track folder holds the HTML instructions, a `data` folder, and an `answer_key` folder.
+```mermaid
+flowchart LR
+    R["data-analyst-assessments"] --> S["01_spreadsheet"]
+    R --> C["02_code"]
+    S --> SE["01_easy"] --> S1["online_store_order_review"]
+    S --> SM["02_medium"] --> S2["sales_commission_review"]
+    S --> SH["03_hard"] --> S3["inventory_reorder_planning"]
+    C --> CE["01_easy"] --> C1["coffee_shop_sales_review"]
+    C --> CM["02_medium"] --> C2["regional_admissions_funnel_review"]
+    C --> CH["03_hard"] --> C3["workforce_attrition_and_pay_review"]
+```
+
+Inside each assessment folder:
+
+```mermaid
+flowchart LR
+    SF["Spreadsheet-track assessment"] --> SA["instructions (.html)"]
+    SF --> SB["workbook (.xlsx)"]
+    SF --> SC["answer key (.md)"]
+    CF["Code-track assessment"] --> CA["instructions (.html)"]
+    CF --> CB["data/"] --> CB2["compressed CSVs (.csv.gz)"]
+    CF --> CC["answer_key/"] --> CC2["answer key (.md)"]
+```
 
 ---
 
 ## License
 
-This project is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This project is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The full text is in [LICENSE.md](LICENSE.md).
 
 You are free to:
 - Use, share, and adapt this work
