@@ -1,0 +1,36 @@
+name: Project Tree
+
+on:
+  # Run when files are added, moved, or removed on main. README-only pushes
+  # are skipped because they cannot change the tree.
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+
+  # Allow manual runs from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  update-tree:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Rebuild the tree in README.md
+        run: python3 .github/scripts/update_readme_tree.py
+
+      # Commits made with the default token do not start other workflows, so
+      # this commit cannot retrigger this job or the link check.
+      - name: Commit if the tree changed
+        run: |
+          if git diff --quiet README.md; then
+            echo "No change to the project tree."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update project tree in README"
+          git push

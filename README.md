@@ -99,43 +99,49 @@ All data is synthetic. The people, stores, schools, and companies are invented, 
 
 Assessments are grouped by track, then by level, with each assessment in its own folder, so a level can hold more than one.
 
+<!-- tree:start -->
 ```
 data-analyst-assessments/
 ├── 01_spreadsheet/
 │   ├── 01_easy/
 │   │   └── online_store_order_review/
-│   │       ├── online_store_order_review.html      # Instructions
-│   │       ├── online_store_orders.xlsx            # Data
-│   │       └── online_store_answer_key.md          # Answer key
+│   │       ├── online_store_answer_key.md               # Answer key
+│   │       ├── online_store_order_review.html           # Instructions
+│   │       └── online_store_orders.xlsx                 # Data
 │   ├── 02_medium/
 │   │   └── sales_commission_review/
-│   │       ├── sales_commission_review.html
-│   │       ├── sales_commission_data.xlsx
-│   │       └── sales_commission_answer_key.md
+│   │       ├── sales_commission_answer_key.md           # Answer key
+│   │       ├── sales_commission_data.xlsx               # Data
+│   │       └── sales_commission_review.html             # Instructions
 │   └── 03_hard/
 │       └── inventory_reorder_planning/
-│           ├── inventory_reorder_planning.html
-│           ├── inventory_planning_data.xlsx
-│           └── inventory_answer_key.md
+│           ├── inventory_answer_key.md                  # Answer key
+│           ├── inventory_planning_data.xlsx             # Data
+│           └── inventory_reorder_planning.html          # Instructions
 ├── 02_code/
 │   ├── 01_easy/
 │   │   └── coffee_shop_sales_review/
-│   │       ├── coffee_shop_sales_review.html       # Instructions
-│   │       ├── data/                               # Compressed CSVs (.csv.gz)
-│   │       └── answer_key/                         # Answer key
+│   │       ├── answer_key/
+│   │       │   └── coffee_answer_key.md                 # Answer key
+│   │       ├── coffee_shop_sales_review.html            # Instructions
+│   │       └── data/                                    # Data (.csv.gz)
 │   ├── 02_medium/
 │   │   └── regional_admissions_funnel_review/
-│   │       ├── regional_admissions_funnel_review.html
-│   │       ├── data/
-│   │       └── answer_key/
+│   │       ├── answer_key/
+│   │       │   └── admissions_answer_key.md             # Answer key
+│   │       ├── data/                                    # Data (.csv.gz)
+│   │       └── regional_admissions_funnel_review.html   # Instructions
 │   └── 03_hard/
 │       └── workforce_attrition_and_pay_review/
-│           ├── workforce_attrition_and_pay_review.html
-│           ├── data/
-│           └── answer_key/                         # Answer key and reference_solution.py
+│           ├── answer_key/
+│           │   ├── reference_solution.py                # Reproduces the answer key
+│           │   └── workforce_answer_key.md              # Answer key
+│           ├── data/                                    # Data (.csv.gz)
+│           └── workforce_attrition_and_pay_review.html  # Instructions
 ├── LICENSE.md
 └── README.md
 ```
+<!-- tree:end -->
 
 ---
 
