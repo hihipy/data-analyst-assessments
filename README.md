@@ -99,28 +99,42 @@ All data is synthetic. The people, stores, schools, and companies are invented, 
 
 Assessments are grouped by track, then by level, with each assessment in its own folder, so a level can hold more than one.
 
-```mermaid
-flowchart LR
-    R["data-analyst-assessments"] --> S["01_spreadsheet"]
-    R --> C["02_code"]
-    S --> SE["01_easy"] --> S1["online_store_order_review"]
-    S --> SM["02_medium"] --> S2["sales_commission_review"]
-    S --> SH["03_hard"] --> S3["inventory_reorder_planning"]
-    C --> CE["01_easy"] --> C1["coffee_shop_sales_review"]
-    C --> CM["02_medium"] --> C2["regional_admissions_funnel_review"]
-    C --> CH["03_hard"] --> C3["workforce_attrition_and_pay_review"]
 ```
-
-Inside each assessment folder:
-
-```mermaid
-flowchart LR
-    SF["Spreadsheet-track assessment"] --> SA["instructions (.html)"]
-    SF --> SB["workbook (.xlsx)"]
-    SF --> SC["answer key (.md)"]
-    CF["Code-track assessment"] --> CA["instructions (.html)"]
-    CF --> CB["data/"] --> CB2["compressed CSVs (.csv.gz)"]
-    CF --> CC["answer_key/"] --> CC2["answer key (.md)"]
+data-analyst-assessments/
+├── 01_spreadsheet/
+│   ├── 01_easy/
+│   │   └── online_store_order_review/
+│   │       ├── online_store_order_review.html      # Instructions
+│   │       ├── online_store_orders.xlsx            # Data
+│   │       └── online_store_answer_key.md          # Answer key
+│   ├── 02_medium/
+│   │   └── sales_commission_review/
+│   │       ├── sales_commission_review.html
+│   │       ├── sales_commission_data.xlsx
+│   │       └── sales_commission_answer_key.md
+│   └── 03_hard/
+│       └── inventory_reorder_planning/
+│           ├── inventory_reorder_planning.html
+│           ├── inventory_planning_data.xlsx
+│           └── inventory_answer_key.md
+├── 02_code/
+│   ├── 01_easy/
+│   │   └── coffee_shop_sales_review/
+│   │       ├── coffee_shop_sales_review.html       # Instructions
+│   │       ├── data/                               # Compressed CSVs (.csv.gz)
+│   │       └── answer_key/                         # Answer key
+│   ├── 02_medium/
+│   │   └── regional_admissions_funnel_review/
+│   │       ├── regional_admissions_funnel_review.html
+│   │       ├── data/
+│   │       └── answer_key/
+│   └── 03_hard/
+│       └── workforce_attrition_and_pay_review/
+│           ├── workforce_attrition_and_pay_review.html
+│           ├── data/
+│           └── answer_key/                         # Answer key and reference_solution.py
+├── LICENSE.md
+└── README.md
 ```
 
 ---
