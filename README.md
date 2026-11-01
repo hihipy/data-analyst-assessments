@@ -29,21 +29,29 @@ Most tests also either ban AI tools or say nothing about them. Neither choice re
 | Spreadsheet | Easy | [Online Store Order Review](01_spreadsheet/01_easy/online_store_order_review/) | E-commerce | 45 minutes |
 | Spreadsheet | Easy | [Clinic Appointment Review](01_spreadsheet/01_easy/clinic_appointment_review/) | Healthcare | 45 minutes |
 | Spreadsheet | Easy | [Department Budget Review](01_spreadsheet/01_easy/department_budget_review/) | Finance | 45 minutes |
+| Spreadsheet | Easy | [Sales Dashboard Critique](01_spreadsheet/01_easy/sales_dashboard_critique/) | Technology sales | 45 minutes |
 | Spreadsheet | Medium | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/) | Software sales | 90 minutes |
 | Spreadsheet | Medium | [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/) | Healthcare | 90 minutes |
 | Spreadsheet | Medium | [Bank Reconciliation](01_spreadsheet/02_medium/bank_reconciliation/) | Banking | 90 minutes |
+| Spreadsheet | Medium | [Employee Survey Analysis](01_spreadsheet/02_medium/employee_survey_analysis/) | Human resources | 90 minutes |
 | Spreadsheet | Hard | [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/) | Distribution | 3 hours |
 | Spreadsheet | Hard | [Emergency Department Throughput and Staffing](01_spreadsheet/03_hard/emergency_department_review/) | Healthcare | 3 hours |
 | Spreadsheet | Hard | [Checkout A/B Test Review](01_spreadsheet/03_hard/checkout_ab_test_review/) | Marketing | 3 hours |
+| Spreadsheet | Hard | [Price Elasticity Review](01_spreadsheet/03_hard/price_elasticity_review/) | Grocery retail | 3 hours |
 | Code | Easy | [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/) | Retail | 60 minutes |
 | Code | Easy | [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/) | Healthcare | 60 minutes |
 | Code | Easy | [Parcel Delivery Review](02_code/01_easy/parcel_delivery_review/) | Logistics | 60 minutes |
+| Code | Easy | [Support Ticket Review](02_code/01_easy/support_ticket_review/) | Customer support | 60 minutes |
 | Code | Medium | [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/) | Education | 2 hours |
 | Code | Medium | [Specialist Referral Follow-Through](02_code/02_medium/specialist_referral_review/) | Healthcare | 2 hours |
 | Code | Medium | [Subscription Cohort Review](02_code/02_medium/subscription_cohort_review/) | Marketing | 2 hours |
+| Code | Medium | [Delivery Zone Coverage](02_code/02_medium/delivery_zone_coverage/) | Grocery delivery | 2 hours |
+| Code | Medium | [Customer Segmentation](02_code/02_medium/customer_segmentation/) | Grocery retail | 2 hours |
 | Code | Hard | [Workforce Attrition and Pay Review](02_code/03_hard/workforce_attrition_and_pay_review/) | Human resources | 4 hours |
 | Code | Hard | [Inpatient Deterioration Early Warning](02_code/03_hard/deterioration_early_warning/) | Healthcare | 4 hours |
 | Code | Hard | [Warehouse Demand Forecasting](02_code/03_hard/demand_forecasting/) | Manufacturing and distribution | 4 hours |
+| Code | Hard | [Store Program Impact Evaluation](02_code/03_hard/program_impact_evaluation/) | Retail | 4 hours |
+| Code | Hard | [Card Fraud Detection](02_code/03_hard/card_fraud_detection/) | Banking | 4 hours |
 
 Each name links to its folder.
 
@@ -116,15 +124,23 @@ data-analyst-assessments/
 │   │   │   ├── department_budget_answer_key.md          # Answer key
 │   │   │   ├── department_budget_data.xlsx              # Data
 │   │   │   └── department_budget_review.html            # Instructions
-│   │   └── online_store_order_review/
-│   │       ├── online_store_answer_key.md               # Answer key
-│   │       ├── online_store_order_review.html           # Instructions
-│   │       └── online_store_orders.xlsx                 # Data
+│   │   ├── online_store_order_review/
+│   │   │   ├── online_store_answer_key.md               # Answer key
+│   │   │   ├── online_store_order_review.html           # Instructions
+│   │   │   └── online_store_orders.xlsx                 # Data
+│   │   └── sales_dashboard_critique/
+│   │       ├── regional_sales_dashboard.xlsx            # Data
+│   │       ├── sales_dashboard_answer_key.md            # Answer key
+│   │       └── sales_dashboard_critique.html            # Instructions
 │   ├── 02_medium/
 │   │   ├── bank_reconciliation/
 │   │   │   ├── bank_reconciliation.html                 # Instructions
 │   │   │   ├── bank_reconciliation_answer_key.md        # Answer key
 │   │   │   └── bank_reconciliation_data.xlsx            # Data
+│   │   ├── employee_survey_analysis/
+│   │   │   ├── employee_survey_analysis.html            # Instructions
+│   │   │   ├── employee_survey_answer_key.md            # Answer key
+│   │   │   └── employee_survey_data.xlsx                # Data
 │   │   ├── hospital_stay_review/
 │   │   │   ├── hospital_stay_answer_key.md              # Answer key
 │   │   │   ├── hospital_stay_review.html                # Instructions
@@ -142,10 +158,14 @@ data-analyst-assessments/
 │       │   ├── ed_throughput_data.xlsx                  # Data
 │       │   ├── emergency_department_answer_key.md       # Answer key
 │       │   └── emergency_department_review.html         # Instructions
-│       └── inventory_reorder_planning/
-│           ├── inventory_answer_key.md                  # Answer key
-│           ├── inventory_planning_data.xlsx             # Data
-│           └── inventory_reorder_planning.html          # Instructions
+│       ├── inventory_reorder_planning/
+│       │   ├── inventory_answer_key.md                  # Answer key
+│       │   ├── inventory_planning_data.xlsx             # Data
+│       │   └── inventory_reorder_planning.html          # Instructions
+│       └── price_elasticity_review/
+│           ├── price_elasticity_answer_key.md           # Answer key
+│           ├── price_elasticity_data.xlsx               # Data
+│           └── price_elasticity_review.html             # Instructions
 ├── 02_code/
 │   ├── 01_easy/
 │   │   ├── coffee_shop_sales_review/
@@ -158,12 +178,27 @@ data-analyst-assessments/
 │   │   │   │   └── parcel_delivery_answer_key.md        # Answer key
 │   │   │   ├── data/                                    # Data (.csv.gz)
 │   │   │   └── parcel_delivery_review.html              # Instructions
-│   │   └── pharmacy_claims_review/
+│   │   ├── pharmacy_claims_review/
+│   │   │   ├── answer_key/
+│   │   │   │   └── pharmacy_claims_answer_key.md        # Answer key
+│   │   │   ├── data/                                    # Data (.csv.gz)
+│   │   │   └── pharmacy_claims_review.html              # Instructions
+│   │   └── support_ticket_review/
 │   │       ├── answer_key/
-│   │       │   └── pharmacy_claims_answer_key.md        # Answer key
+│   │       │   └── support_ticket_answer_key.md         # Answer key
 │   │       ├── data/                                    # Data (.csv.gz)
-│   │       └── pharmacy_claims_review.html              # Instructions
+│   │       └── support_ticket_review.html               # Instructions
 │   ├── 02_medium/
+│   │   ├── customer_segmentation/
+│   │   │   ├── answer_key/
+│   │   │   │   └── customer_segmentation_answer_key.md  # Answer key
+│   │   │   ├── customer_segmentation.html               # Instructions
+│   │   │   └── data/                                    # Data (.csv.gz)
+│   │   ├── delivery_zone_coverage/
+│   │   │   ├── answer_key/
+│   │   │   │   └── delivery_zone_answer_key.md          # Answer key
+│   │   │   ├── data/                                    # Data (.csv.gz)
+│   │   │   └── delivery_zone_coverage.html              # Instructions
 │   │   ├── regional_admissions_funnel_review/
 │   │   │   ├── answer_key/
 │   │   │   │   └── admissions_answer_key.md             # Answer key
@@ -180,6 +215,12 @@ data-analyst-assessments/
 │   │       ├── data/                                    # Data (.csv.gz)
 │   │       └── subscription_cohort_review.html          # Instructions
 │   └── 03_hard/
+│       ├── card_fraud_detection/
+│       │   ├── answer_key/
+│       │   │   ├── card_fraud_answer_key.md             # Answer key
+│       │   │   └── reference_solution.py                # Reproduces the answer key
+│       │   ├── card_fraud_detection.html                # Instructions
+│       │   └── data/                                    # Data (.csv.gz)
 │       ├── demand_forecasting/
 │       │   ├── answer_key/
 │       │   │   ├── demand_forecasting_answer_key.md     # Answer key
@@ -193,6 +234,12 @@ data-analyst-assessments/
 │       │   │   └── reference_solution.py                # Reproduces the answer key
 │       │   ├── data/                                    # Data (.csv.gz)
 │       │   └── deterioration_early_warning.html         # Instructions
+│       ├── program_impact_evaluation/
+│       │   ├── answer_key/
+│       │   │   ├── program_impact_answer_key.md         # Answer key
+│       │   │   └── reference_solution.py                # Reproduces the answer key
+│       │   ├── data/                                    # Data (.csv.gz)
+│       │   └── program_impact_evaluation.html           # Instructions
 │       └── workforce_attrition_and_pay_review/
 │           ├── answer_key/
 │           │   ├── reference_solution.py                # Reproduces the answer key
