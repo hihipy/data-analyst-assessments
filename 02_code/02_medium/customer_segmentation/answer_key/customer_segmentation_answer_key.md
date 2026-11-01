@@ -18,37 +18,38 @@ Feature engineering from transactions, scaling and outliers in clustering, choos
 
 ### Part 1: Features and Data Problems
 
-- **Returns:** 40,395 rows with negative amounts. Net them out of spend; leave them out of order counts and basket size.
+- **Returns:** 42,003 rows with negative amounts. Net them out of spend; leave them out of order counts and basket size.
 - **Business accounts:** 40 customers spend far more than anyone else and account for all of the top 40 spenders. Set them aside as their own group before clustering.
 - **Scale:** spend runs in thousands while shares run from 0 to 1. Without log transforms and standardization, spend dominates the clusters.
 
 ### Part 2: Segments
 
-Silhouette scores by number of clusters (scaled features, business accounts removed): 3: 0.44, 4: 0.536, 5: 0.618, 6: 0.599, 7: 0.462, 8: 0.397. Five segments score highest.
+Silhouette scores by number of clusters (scaled features, business accounts removed): 3: 0.201, 4: 0.209, 5: 0.23, 6: 0.231, 7: 0.192, 8: 0.171. Five and six clusters score almost the same, so the choice is a judgment call; a strong answer says so and picks the number marketing can act on.
 
-| Segment | Share of Customers | Share of Spend | Days Since Last Order | Orders per Month | Average Basket | Promotion Use | Online Share |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Weekly Regulars | 30.2% | 53.0% | 6 | 4.06 | $58 | 15% | 25% |
-| Monthly Stock-Up | 18.0% | 25.1% | 23 | 0.97 | $201 | 20% | 55% |
-| Deal Seekers | 21.9% | 12.2% | 12 | 1.89 | $40 | 70% | 35% |
-| Lapsed | 14.9% | 4.6% | 355 | 0.63 | $63 | 25% | 29% |
-| New Online | 15.0% | 5.2% | 9 | 2.73 | $74 | 19% | 92% |
+| Segment | Share of Customers | Share of Spend | Days Since Last Order | Orders per Month | Average Basket | Promotion Use | Online Share | Purity |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Deal Seekers | 21.6% | 15.0% | 11 | 2.06 | $48 | 53% | 41% | 84.7% |
+| Monthly Stock-Up | 19.1% | 25.5% | 18 | 1.34 | $145 | 22% | 50% | 82.3% |
+| Weekly Regulars | 29.1% | 47.0% | 6 | 3.55 | $62 | 21% | 31% | 87.3% |
+| Lapsed | 17.4% | 7.6% | 232 | 0.96 | $65 | 27% | 35% | 77.9% |
+| New Online | 12.8% | 4.9% | 9 | 2.63 | $73 | 23% | 83% | 99.9% |
 
-The data was simulated from five shopper types. A scaled five-cluster model recovers them almost exactly (adjusted Rand index 0.998), and refitting on half the customers gives the same segments (index 1.0). Clustering the raw features with business accounts included scores 0.293.
+The data was simulated from five shopper types, with individual variation and a fifth of customers shopping like a blend of two types, so the segments overlap. A scaled five-cluster model recovers them with an adjusted Rand index of 0.667; each segment is 78 to 100 percent one type. Refitting on half the customers gives the same segments (index 0.99). Clustering the raw features with business accounts included scores 0.061, close to random.
 
 ### Part 3: What a Good Answer Says
 
-- **Weekly regulars drive revenue:** about 30 percent of customers and over half of spend. Protect them with loyalty, not discounts.
-- **Lapsed customers are most at risk:** no order in almost a year. Win them back, or stop spending on them.
-- **Deal seekers use promotions on most orders:** target them with promotions, and don't discount to the others.
+- **Weekly regulars drive revenue:** about 29 percent of customers and nearly half of spend. Protect them with loyalty, not discounts.
+- **Lapsed customers are most at risk:** a median of about 8 months since their last order. Win them back, or stop spending on them.
+- **Deal seekers use promotions on about half their orders:** target them with promotions, and don't discount to the others.
 - **New online customers are young accounts:** onboarding and a second-order offer matter most.
+- **Segments are tendencies, not boxes.** A fifth of customers sit between types, so campaigns should tolerate some overlap.
 
 ## Scoring Rubric (100 Points)
 
 | Criterion | Points | Full Marks Require |
 | --- | ---: | --- |
 | Features | 25 | Customer-level features with returns handled and business accounts set aside. |
-| Clustering | 25 | Scaled features, a justified number of segments, and a stability check. |
+| Clustering | 25 | Scaled features, a justified number of segments with the five-versus-six ambiguity acknowledged, and a stability check. |
 | Profiles | 25 | Sizes, spend shares, and names that match the behavior. |
 | Recommendations | 15 | One action per segment, with revenue priority and risk identified. |
 | Reproducibility and AI transparency | 10 | Code or notebook reruns. An AI log, if used, at the Strong level. |

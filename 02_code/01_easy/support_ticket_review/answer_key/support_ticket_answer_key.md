@@ -21,29 +21,38 @@ Cleaning and categorizing free text at scale, validating a method against labele
 | Problem | Rows | Correct Handling |
 | --- | ---: | --- |
 | Resubmissions: same customer, same text, within 15 minutes | 20,000 | Remove; they inflate volume |
-| Automatic out-of-office replies | 15,309 | Remove; they are not requests |
-| Tickets in Spanish | 65,054 | Categorize them too; dropping them loses 6 percent of customers |
+| Automatic replies, such as out-of-office messages | 15,309 | Remove; they are not requests |
+| Tickets in Spanish, about 6 percent | About 64,000 | Categorize them too; a method that ignores them loses those customers |
 
 Removing the noise leaves 1,065,000 real tickets; raw counts overstate volume by 3.3 percent.
 
 ### Part 1: Method
 
-Simple keyword rules, in English and Spanish, reach 99.7 percent accuracy on the labeled sample, so a model is not required. Any method is fine if it is checked against the sample.
+The text is messy on purpose: typos, greetings and sign-offs, two issues in one ticket, and words that point the wrong way, such as "promo code" in a billing ticket or "won't charge" in a device ticket.
+
+| Method | Accuracy on Held-Out Labeled Tickets |
+| --- | ---: |
+| Keyword rules, written by hand in English and Spanish | 77.5% |
+| Logistic regression on character n-grams, trained on 80 percent of the labeled sample | 97.0% |
+
+Across all tickets, the rules are 74.7 percent accurate and the model 96.7 percent. The rules fail most on tickets they match to nothing and on misleading words: Shipping labeled as Other (123), Login labeled as Other (99), Shipping labeled as Refund (50). Any method is acceptable if it is checked against the labeled sample, and a strong answer reports where it fails.
 
 ### Part 2: Results
 
-Lowest satisfaction (average, 1 to 5): Verification Code 2.6, Product Defect 3.1, Refund 3.29, Login 3.39. Only 34.9 percent of tickets have a rating, so these averages come from about a third of tickets.
+Using the trained model's categories:
 
-Median minutes to resolve: Product Defect 75, Verification Code 59, Shipping 41, Other 38.
+Lowest satisfaction (average, 1 to 5): Verification Code 2.62, Product Defect 3.12, Refund 3.3, Login 3.4. Only 34.9 percent of tickets have a rating, so these averages come from about a third of tickets.
 
-**The new problem:** tickets about verification codes not arriving start in July 2025 and reach 8,300 in August, 14.6 percent of all tickets in the third quarter. They have the lowest satisfaction of any category. Login tickets did not rise to match, so this is a new failure, not a relabeling.
+Median minutes to resolve: Product Defect 73, Verification Code 58, Shipping 41, Refund 37.
+
+**The new problem:** tickets about verification codes not arriving start in July 2025 and reach 7,659 in August, 13.5 percent of all tickets in the third quarter. They have the lowest satisfaction of any category. Login tickets did not rise to match, so this is a new failure, not a relabeling.
 
 ## Scoring Rubric (100 Points)
 
 | Criterion | Points | Full Marks Require |
 | --- | ---: | --- |
 | Cleaning | 20 | Removes resubmissions and auto-replies, and keeps Spanish tickets. |
-| Categorization | 25 | A documented method with accuracy checked on the labeled sample. |
+| Categorization | 25 | A documented method with accuracy checked on the labeled sample; simple keyword rules land near 75 percent, a trained model near 97. |
 | Analysis | 30 | Volume by month and category, satisfaction and resolution by category, and the verification-code spike found and sized. |
 | Communication | 15 | One page or 3 slides, a clear chart, and claims tied to numbers. |
 | Reproducibility and AI transparency | 10 | Code or notebook reruns. An AI log, if used, at the Strong level. |

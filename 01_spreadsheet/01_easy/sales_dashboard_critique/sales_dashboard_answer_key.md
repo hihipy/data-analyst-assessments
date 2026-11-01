@@ -23,7 +23,8 @@ Checking numbers against their source, recognizing misleading chart choices, and
 | Total 2025 revenue | The formula stops before December, leaving out 20 rows | $62,595,395, not $58,149,253 |
 | Growth vs 2024 | Built on the wrong total, so it shows a decline | +2.5 percent, not -4.8 percent |
 | Target attainment | Built on the wrong total | 96.6 percent, not 89.7 percent |
-| Revenue by region bar chart | The value axis starts near $8,329,623, not zero, which exaggerates small differences; the title claims growth everywhere, but West fell 1.0 percent | Start the axis at zero, or show growth rates directly; title it with the actual finding |
+| Revenue by region bar chart | The value axis starts at $8,000,000, not zero, which exaggerates small differences; the title claims growth everywhere, but West fell 1.0 percent | Start the axis at zero, or show growth rates directly; title it with the actual finding |
+| Revenue by region colors | The two years are told apart only by red and green | A color-blind-safe pair, or labels on the bars |
 | Revenue mix pie chart | 20 slices are unreadable and hide the region and product structure | A bar chart or a small table by region and product line |
 | Revenue vs target line chart | Compares a running total with a monthly target, which can never match | Monthly revenue against monthly target, or both cumulative |
 
