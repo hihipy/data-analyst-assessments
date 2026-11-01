@@ -28,16 +28,22 @@ Most tests also either ban AI tools or say nothing about them. Neither choice re
 | --- | --- | --- | --- | --- |
 | Spreadsheet | Easy | [Online Store Order Review](01_spreadsheet/01_easy/online_store_order_review/) | E-commerce | 45 minutes |
 | Spreadsheet | Easy | [Clinic Appointment Review](01_spreadsheet/01_easy/clinic_appointment_review/) | Healthcare | 45 minutes |
+| Spreadsheet | Easy | [Department Budget Review](01_spreadsheet/01_easy/department_budget_review/) | Finance | 45 minutes |
 | Spreadsheet | Medium | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/) | Software sales | 90 minutes |
 | Spreadsheet | Medium | [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/) | Healthcare | 90 minutes |
+| Spreadsheet | Medium | [Bank Reconciliation](01_spreadsheet/02_medium/bank_reconciliation/) | Banking | 90 minutes |
 | Spreadsheet | Hard | [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/) | Distribution | 3 hours |
 | Spreadsheet | Hard | [Emergency Department Throughput and Staffing](01_spreadsheet/03_hard/emergency_department_review/) | Healthcare | 3 hours |
+| Spreadsheet | Hard | [Checkout A/B Test Review](01_spreadsheet/03_hard/checkout_ab_test_review/) | Marketing | 3 hours |
 | Code | Easy | [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/) | Retail | 60 minutes |
 | Code | Easy | [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/) | Healthcare | 60 minutes |
+| Code | Easy | [Parcel Delivery Review](02_code/01_easy/parcel_delivery_review/) | Logistics | 60 minutes |
 | Code | Medium | [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/) | Education | 2 hours |
 | Code | Medium | [Specialist Referral Follow-Through](02_code/02_medium/specialist_referral_review/) | Healthcare | 2 hours |
+| Code | Medium | [Subscription Cohort Review](02_code/02_medium/subscription_cohort_review/) | Marketing | 2 hours |
 | Code | Hard | [Workforce Attrition and Pay Review](02_code/03_hard/workforce_attrition_and_pay_review/) | Human resources | 4 hours |
 | Code | Hard | [Inpatient Deterioration Early Warning](02_code/03_hard/deterioration_early_warning/) | Healthcare | 4 hours |
+| Code | Hard | [Warehouse Demand Forecasting](02_code/03_hard/demand_forecasting/) | Manufacturing and distribution | 4 hours |
 
 Each name links to its folder.
 
@@ -83,7 +89,7 @@ Each assessment has an answer key with:
 - Guidance on judging AI use, based on transparency and checking rather than whether AI was used.
 - Follow-up questions for an interview.
 
-The hard code-track assessments also include a Python script, `reference_solution.py`, that reproduces every figure in the key from the data files.
+The hard code-track assessments also include a Python script, `reference_solution.py`, that reproduces every figure in the key from the data files. The forecasting assessment's key also holds the actual demand for the forecast weeks, so a candidate's forecast can be scored.
 
 ---
 
@@ -106,11 +112,19 @@ data-analyst-assessments/
 │   │   │   ├── clinic_appointment_answer_key.md         # Answer key
 │   │   │   ├── clinic_appointment_review.html           # Instructions
 │   │   │   └── clinic_appointments.xlsx                 # Data
+│   │   ├── department_budget_review/
+│   │   │   ├── department_budget_answer_key.md          # Answer key
+│   │   │   ├── department_budget_data.xlsx              # Data
+│   │   │   └── department_budget_review.html            # Instructions
 │   │   └── online_store_order_review/
 │   │       ├── online_store_answer_key.md               # Answer key
 │   │       ├── online_store_order_review.html           # Instructions
 │   │       └── online_store_orders.xlsx                 # Data
 │   ├── 02_medium/
+│   │   ├── bank_reconciliation/
+│   │   │   ├── bank_reconciliation.html                 # Instructions
+│   │   │   ├── bank_reconciliation_answer_key.md        # Answer key
+│   │   │   └── bank_reconciliation_data.xlsx            # Data
 │   │   ├── hospital_stay_review/
 │   │   │   ├── hospital_stay_answer_key.md              # Answer key
 │   │   │   ├── hospital_stay_review.html                # Instructions
@@ -120,6 +134,10 @@ data-analyst-assessments/
 │   │       ├── sales_commission_data.xlsx               # Data
 │   │       └── sales_commission_review.html             # Instructions
 │   └── 03_hard/
+│       ├── checkout_ab_test_review/
+│       │   ├── checkout_ab_test_answer_key.md           # Answer key
+│       │   ├── checkout_ab_test_data.xlsx               # Data
+│       │   └── checkout_ab_test_review.html             # Instructions
 │       ├── emergency_department_review/
 │       │   ├── ed_throughput_data.xlsx                  # Data
 │       │   ├── emergency_department_answer_key.md       # Answer key
@@ -135,6 +153,11 @@ data-analyst-assessments/
 │   │   │   │   └── coffee_answer_key.md                 # Answer key
 │   │   │   ├── coffee_shop_sales_review.html            # Instructions
 │   │   │   └── data/                                    # Data (.csv.gz)
+│   │   ├── parcel_delivery_review/
+│   │   │   ├── answer_key/
+│   │   │   │   └── parcel_delivery_answer_key.md        # Answer key
+│   │   │   ├── data/                                    # Data (.csv.gz)
+│   │   │   └── parcel_delivery_review.html              # Instructions
 │   │   └── pharmacy_claims_review/
 │   │       ├── answer_key/
 │   │       │   └── pharmacy_claims_answer_key.md        # Answer key
@@ -146,12 +169,24 @@ data-analyst-assessments/
 │   │   │   │   └── admissions_answer_key.md             # Answer key
 │   │   │   ├── data/                                    # Data (.csv.gz)
 │   │   │   └── regional_admissions_funnel_review.html   # Instructions
-│   │   └── specialist_referral_review/
+│   │   ├── specialist_referral_review/
+│   │   │   ├── answer_key/
+│   │   │   │   └── specialist_referral_answer_key.md    # Answer key
+│   │   │   ├── data/                                    # Data (.csv.gz)
+│   │   │   └── specialist_referral_review.html          # Instructions
+│   │   └── subscription_cohort_review/
 │   │       ├── answer_key/
-│   │       │   └── specialist_referral_answer_key.md    # Answer key
+│   │       │   └── subscription_cohort_answer_key.md    # Answer key
 │   │       ├── data/                                    # Data (.csv.gz)
-│   │       └── specialist_referral_review.html          # Instructions
+│   │       └── subscription_cohort_review.html          # Instructions
 │   └── 03_hard/
+│       ├── demand_forecasting/
+│       │   ├── answer_key/
+│       │   │   ├── demand_forecasting_answer_key.md     # Answer key
+│       │   │   ├── future_actuals.csv.gz
+│       │   │   └── reference_solution.py                # Reproduces the answer key
+│       │   ├── data/                                    # Data (.csv.gz)
+│       │   └── demand_forecasting.html                  # Instructions
 │       ├── deterioration_early_warning/
 │       │   ├── answer_key/
 │       │   │   ├── deterioration_answer_key.md          # Answer key
