@@ -30,18 +30,22 @@ Most tests also either ban AI tools or say nothing about them. Neither choice re
 | Spreadsheet | Easy | [Clinic Appointment Review](01_spreadsheet/01_easy/clinic_appointment_review/) | Healthcare | 45 minutes |
 | Spreadsheet | Easy | [Department Budget Review](01_spreadsheet/01_easy/department_budget_review/) | Finance | 45 minutes |
 | Spreadsheet | Easy | [Sales Dashboard Critique](01_spreadsheet/01_easy/sales_dashboard_critique/) | Technology sales | 45 minutes |
+| Spreadsheet | Easy | [Website Conversion Funnel Review](01_spreadsheet/01_easy/web_funnel_review/) | Marketing | 45 minutes |
 | Spreadsheet | Medium | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/) | Software sales | 90 minutes |
 | Spreadsheet | Medium | [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/) | Healthcare | 90 minutes |
 | Spreadsheet | Medium | [Bank Reconciliation](01_spreadsheet/02_medium/bank_reconciliation/) | Banking | 90 minutes |
 | Spreadsheet | Medium | [Employee Survey Analysis](01_spreadsheet/02_medium/employee_survey_analysis/) | Human resources | 90 minutes |
+| Spreadsheet | Medium | [New Location Business Case](01_spreadsheet/02_medium/expansion_business_case/) | Restaurants | 90 minutes |
 | Spreadsheet | Hard | [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/) | Distribution | 3 hours |
 | Spreadsheet | Hard | [Emergency Department Throughput and Staffing](01_spreadsheet/03_hard/emergency_department_review/) | Healthcare | 3 hours |
 | Spreadsheet | Hard | [Checkout A/B Test Review](01_spreadsheet/03_hard/checkout_ab_test_review/) | Marketing | 3 hours |
 | Spreadsheet | Hard | [Price Elasticity Review](01_spreadsheet/03_hard/price_elasticity_review/) | Grocery retail | 3 hours |
+| Spreadsheet | Hard | [Production Quality Review](01_spreadsheet/03_hard/production_quality_review/) | Manufacturing | 3 hours |
 | Code | Easy | [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/) | Retail | 60 minutes |
 | Code | Easy | [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/) | Healthcare | 60 minutes |
 | Code | Easy | [Parcel Delivery Review](02_code/01_easy/parcel_delivery_review/) | Logistics | 60 minutes |
 | Code | Easy | [Support Ticket Review](02_code/01_easy/support_ticket_review/) | Customer support | 60 minutes |
+| Code | Easy | [Open-Ended Sales Question](02_code/01_easy/open_ended_sales_question/) | E-commerce | 60 minutes |
 | Code | Medium | [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/) | Education | 2 hours |
 | Code | Medium | [Specialist Referral Follow-Through](02_code/02_medium/specialist_referral_review/) | Healthcare | 2 hours |
 | Code | Medium | [Subscription Cohort Review](02_code/02_medium/subscription_cohort_review/) | Marketing | 2 hours |
@@ -66,13 +70,13 @@ Every assessment tests several skills. This table lists the ones where each skil
 | Skill | What It Covers | Assessments |
 | --- | --- | --- |
 | Aggregation and pivot tables | Totals, averages, and breakdowns by group | [Online Store Order Review](01_spreadsheet/01_easy/online_store_order_review/), [Clinic Appointment Review](01_spreadsheet/01_easy/clinic_appointment_review/), [Department Budget Review](01_spreadsheet/01_easy/department_budget_review/), [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/), [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/) |
-| Rates and denominators | Choosing what to divide by, and what to leave out | [Clinic Appointment Review](01_spreadsheet/01_easy/clinic_appointment_review/), [Online Store Order Review](01_spreadsheet/01_easy/online_store_order_review/), [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/), [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/), [Parcel Delivery Review](02_code/01_easy/parcel_delivery_review/) |
-| Data cleaning and validation | Duplicates, bad values, mixed formats, and records that contradict each other | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/), [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/), [Employee Survey Analysis](01_spreadsheet/02_medium/employee_survey_analysis/), [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/), [Emergency Department Throughput and Staffing](01_spreadsheet/03_hard/emergency_department_review/), [Delivery Zone Coverage](02_code/02_medium/delivery_zone_coverage/), [Workforce Attrition and Pay Review](02_code/03_hard/workforce_attrition_and_pay_review/) |
+| Rates and denominators | Choosing what to divide by, and what to leave out | [Clinic Appointment Review](01_spreadsheet/01_easy/clinic_appointment_review/), [Online Store Order Review](01_spreadsheet/01_easy/online_store_order_review/), [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/), [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/), [Parcel Delivery Review](02_code/01_easy/parcel_delivery_review/), [Website Conversion Funnel Review](01_spreadsheet/01_easy/web_funnel_review/) |
+| Data cleaning and validation | Duplicates, bad values, mixed formats, and records that contradict each other | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/), [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/), [Employee Survey Analysis](01_spreadsheet/02_medium/employee_survey_analysis/), [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/), [Emergency Department Throughput and Staffing](01_spreadsheet/03_hard/emergency_department_review/), [Delivery Zone Coverage](02_code/02_medium/delivery_zone_coverage/), [Workforce Attrition and Pay Review](02_code/03_hard/workforce_attrition_and_pay_review/), [Website Conversion Funnel Review](01_spreadsheet/01_easy/web_funnel_review/), [Production Quality Review](01_spreadsheet/03_hard/production_quality_review/) |
 | Joining and matching records | Lookups across files, and matching records that do not line up one to one | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/), [Bank Reconciliation](01_spreadsheet/02_medium/bank_reconciliation/), [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/), [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/), [Workforce Attrition and Pay Review](02_code/03_hard/workforce_attrition_and_pay_review/) |
 | Dates, time zones, and time windows | Date math, daylight saving, and what was true on a given date | [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/), [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/), [Emergency Department Throughput and Staffing](01_spreadsheet/03_hard/emergency_department_review/), [Parcel Delivery Review](02_code/01_easy/parcel_delivery_review/), [Workforce Attrition and Pay Review](02_code/03_hard/workforce_attrition_and_pay_review/) |
 | Reshaping event data | Turning logs and line items into one row per customer, package, or transaction | [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/), [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/), [Parcel Delivery Review](02_code/01_easy/parcel_delivery_review/), [Subscription Cohort Review](02_code/02_medium/subscription_cohort_review/) |
-| Incomplete or censored data | Partial periods, outcomes not yet known, and demand hidden by stockouts | [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/), [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/), [Specialist Referral Follow-Through](02_code/02_medium/specialist_referral_review/), [Subscription Cohort Review](02_code/02_medium/subscription_cohort_review/), [Warehouse Demand Forecasting](02_code/03_hard/demand_forecasting/), [Card Fraud Detection](02_code/03_hard/card_fraud_detection/) |
-| Financial analysis | Budgets, reconciliations, commissions, and pricing | [Department Budget Review](01_spreadsheet/01_easy/department_budget_review/), [Bank Reconciliation](01_spreadsheet/02_medium/bank_reconciliation/), [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/), [Price Elasticity Review](01_spreadsheet/03_hard/price_elasticity_review/), [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/) |
+| Incomplete or censored data | Partial periods, outcomes not yet known, and demand hidden by stockouts | [Coffee Shop Sales Review](02_code/01_easy/coffee_shop_sales_review/), [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/), [Specialist Referral Follow-Through](02_code/02_medium/specialist_referral_review/), [Subscription Cohort Review](02_code/02_medium/subscription_cohort_review/), [Warehouse Demand Forecasting](02_code/03_hard/demand_forecasting/), [Card Fraud Detection](02_code/03_hard/card_fraud_detection/), [Open-Ended Sales Question](02_code/01_easy/open_ended_sales_question/) |
+| Financial analysis | Budgets, reconciliations, commissions, and pricing | [Department Budget Review](01_spreadsheet/01_easy/department_budget_review/), [Bank Reconciliation](01_spreadsheet/02_medium/bank_reconciliation/), [Sales Commission Review](01_spreadsheet/02_medium/sales_commission_review/), [Price Elasticity Review](01_spreadsheet/03_hard/price_elasticity_review/), [Pharmacy Claims Review](02_code/01_easy/pharmacy_claims_review/), [New Location Business Case](01_spreadsheet/02_medium/expansion_business_case/) |
 | Operations and capacity | Inventory, staffing, beds, appointment slots, and coverage | [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/), [Emergency Department Throughput and Staffing](01_spreadsheet/03_hard/emergency_department_review/), [Hospital Length of Stay and Readmissions](01_spreadsheet/02_medium/hospital_stay_review/), [Specialist Referral Follow-Through](02_code/02_medium/specialist_referral_review/), [Delivery Zone Coverage](02_code/02_medium/delivery_zone_coverage/) |
 | Forecasting | Projecting what comes next and measuring forecast error | [Regional Admissions Funnel Review](02_code/02_medium/regional_admissions_funnel_review/), [Inventory Reorder Planning](01_spreadsheet/03_hard/inventory_reorder_planning/), [Warehouse Demand Forecasting](02_code/03_hard/demand_forecasting/) |
 | Experiments and statistical testing | Confidence intervals, significance, and margins of error | [Checkout A/B Test Review](01_spreadsheet/03_hard/checkout_ab_test_review/), [Employee Survey Analysis](01_spreadsheet/02_medium/employee_survey_analysis/) |
@@ -84,6 +88,9 @@ Every assessment tests several skills. This table lists the ones where each skil
 | Survey analysis | Weighting, reverse-coded items, and small groups | [Employee Survey Analysis](01_spreadsheet/02_medium/employee_survey_analysis/) |
 | Text data | Categorizing free text | [Support Ticket Review](02_code/01_easy/support_ticket_review/) |
 | Geospatial analysis | Distance, coverage, and choosing a location | [Delivery Zone Coverage](02_code/02_medium/delivery_zone_coverage/) |
+| Financial modeling and scenarios | Building a model from assumptions, with sensitivity and risk | [New Location Business Case](01_spreadsheet/02_medium/expansion_business_case/) |
+| Statistical process control | Control charts, process capability, and root causes | [Production Quality Review](01_spreadsheet/03_hard/production_quality_review/) |
+| Scoping an open-ended question | Defining a vague request, stating assumptions, and answering plainly | [Open-Ended Sales Question](02_code/01_easy/open_ended_sales_question/) |
 | Dashboard and chart design | Checking a dashboard and building a clearer one | [Sales Dashboard Critique](01_spreadsheet/01_easy/sales_dashboard_critique/) |
 
 ---
@@ -155,10 +162,14 @@ data-analyst-assessments/
 │   │   │   ├── online_store_answer_key.md               # Answer key
 │   │   │   ├── online_store_order_review.html           # Instructions
 │   │   │   └── online_store_orders.xlsx                 # Data
-│   │   └── sales_dashboard_critique/
-│   │       ├── regional_sales_dashboard.xlsx            # Data
-│   │       ├── sales_dashboard_answer_key.md            # Answer key
-│   │       └── sales_dashboard_critique.html            # Instructions
+│   │   ├── sales_dashboard_critique/
+│   │   │   ├── regional_sales_dashboard.xlsx            # Data
+│   │   │   ├── sales_dashboard_answer_key.md            # Answer key
+│   │   │   └── sales_dashboard_critique.html            # Instructions
+│   │   └── web_funnel_review/
+│   │       ├── web_funnel_answer_key.md                 # Answer key
+│   │       ├── web_funnel_data.xlsx                     # Data
+│   │       └── web_funnel_review.html                   # Instructions
 │   ├── 02_medium/
 │   │   ├── bank_reconciliation/
 │   │   │   ├── bank_reconciliation.html                 # Instructions
@@ -168,6 +179,10 @@ data-analyst-assessments/
 │   │   │   ├── employee_survey_analysis.html            # Instructions
 │   │   │   ├── employee_survey_answer_key.md            # Answer key
 │   │   │   └── employee_survey_data.xlsx                # Data
+│   │   ├── expansion_business_case/
+│   │   │   ├── expansion_business_case.html             # Instructions
+│   │   │   ├── expansion_business_case_answer_key.md    # Answer key
+│   │   │   └── expansion_model_inputs.xlsx              # Data
 │   │   ├── hospital_stay_review/
 │   │   │   ├── hospital_stay_answer_key.md              # Answer key
 │   │   │   ├── hospital_stay_review.html                # Instructions
@@ -189,10 +204,14 @@ data-analyst-assessments/
 │       │   ├── inventory_answer_key.md                  # Answer key
 │       │   ├── inventory_planning_data.xlsx             # Data
 │       │   └── inventory_reorder_planning.html          # Instructions
-│       └── price_elasticity_review/
-│           ├── price_elasticity_answer_key.md           # Answer key
-│           ├── price_elasticity_data.xlsx               # Data
-│           └── price_elasticity_review.html             # Instructions
+│       ├── price_elasticity_review/
+│       │   ├── price_elasticity_answer_key.md           # Answer key
+│       │   ├── price_elasticity_data.xlsx               # Data
+│       │   └── price_elasticity_review.html             # Instructions
+│       └── production_quality_review/
+│           ├── production_quality_answer_key.md         # Answer key
+│           ├── production_quality_data.xlsx             # Data
+│           └── production_quality_review.html           # Instructions
 ├── 02_code/
 │   ├── 01_easy/
 │   │   ├── coffee_shop_sales_review/
@@ -200,6 +219,11 @@ data-analyst-assessments/
 │   │   │   │   └── coffee_answer_key.md                 # Answer key
 │   │   │   ├── coffee_shop_sales_review.html            # Instructions
 │   │   │   └── data/                                    # Data (.csv.gz)
+│   │   ├── open_ended_sales_question/
+│   │   │   ├── answer_key/
+│   │   │   │   └── open_ended_sales_answer_key.md       # Answer key
+│   │   │   ├── data/                                    # Data (.csv.gz)
+│   │   │   └── open_ended_sales_question.html           # Instructions
 │   │   ├── parcel_delivery_review/
 │   │   │   ├── answer_key/
 │   │   │   │   └── parcel_delivery_answer_key.md        # Answer key
